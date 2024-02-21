@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porto Folio</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="nav-area">
+           
+            <div class="nav">
+                <div class="logo">
+                    <span>Tutu.Devs</span>
+                </div>
+                
+                <ul class="list-item">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    
+                    <li>
+                        <a href="contact.html">Contacts</a>
+
+                    </li>
+                    <li><a href="#">Services</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+            <div class="desc">
+                <h2> <span class="intro">I'm</span> Hissen Tutu</h2><br>
+                <div class="content">
+                    <div class="static">I'm a</div>
+                        <Span class="dynamic-texts"></Span>
+                       
+    
+                </div>
+               
+                <br>
+             <p>I am Software enthusiatic and Tech mentor<br> 
+                Feel free to contact us to share ,&nbsp;learn ,&nbsp;inspire and do a lot<br>
+                 more  on the new trends on Technology<br>
+            </p>
+                <button href="contact.html" class="form-btn" 
+                ><a href="contact.html">Get In Touch</a></button>
+            </div>
+    
+
+    </div>
+
+    <script>
+        const text=document.querySelector('.dynamic-texts');
+        const load=()=>{
+            setTimeout(()=>{
+                text.textContent="Web Developer"
+            },0);
+            setTimeout(()=>{
+                text.textContent="Mentor"
+            },4000);
+            setTimeout(()=>{
+                text.textContent="Freelancer"
+            },8000)
+        }
+        load();
+        setInterval(load,12000);
+
+
+        function getColor(){
+            const hex=["#000","#fff","#0e1538","#00eaff"]
+            let random=Math.floor(Math.random()*hex.length);
+
+            const hexColor=hex[random];
+            const theme=document.querySelector('.theme');
+            theme.addEventListener('click',(e)=>{
+                document.body.style.backgroundColor=`${hexColor}`
+                if(document.body.style.backgroundColor==="#fff"){
+                    const pg=document.getElementsByTagName('p');
+                    pg.style.color="white";
+                }else{
+                    return;
+                }
+            })
+        }
+       
+    </script>
+    
+</body>
+</html>

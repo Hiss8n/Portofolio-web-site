@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet"href="form.css">
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="sendEnail();reset();return false">
+            <div>
+
+           
+            <h2>Get In Touch</h2>
+            
+            <input type="text" placeholder="Enter your name">
+            <input type="email" name="email" placeholder="Enter your email" id="email" required>
+            <input type="password" name="password" placeholder="Enter your password" required>
+            <input type="text" name="text" placeholder="subject" max="70">
+            <textarea placeholder="Write you message" maxlength="200" id="message"></textarea>
+            <button type="submit">submit</button>
+        </div>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEnail(){
+                            Email.send({
+                    Host : "hissentutu@gmail.com",
+                    Username : "hissentutu@gmail.com",
+                    Password : "H!$$en@1998",
+                    To :'hissentutu4@gmail.com',
+                    From :document.getElementById("email").value,
+                    Subject : "The contact form",
+                    Body :document.getElementById("message").value,
+                }).then(
+                message => alert(message)
+                );
+        }
+    </script>
+    
+</body>
+</html>
